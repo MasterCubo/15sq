@@ -100,24 +100,20 @@ function setup() {
   textFont("Inconsolata");
   
   
-  nameInput = createInput()
-  nameInput.attribute("placeholder", "Name for Leaderboard")
-  nameInput.position(50, 500)
+  nameInput = document.getElementById("i_name")
+  //nameInput.position(0, 500, "relative")
   
-  mySelect = createSelect();
-  mySelect.position(0, 500);
+  mySelect = document.getElementById("s_size")
+  //mySelect.position(0, 500);
 
   // Add color options.
-  mySelect.option(2);
-  mySelect.option(3);
-  mySelect.option(4);
-  mySelect.option(5);
-  mySelect.option(6);
-  mySelect.option(7);
-  mySelect.option(8);
-  mySelect.option(9);
-  mySelect.option(10);
-  mySelect.selected(4);
+  for (let i = 2; i < 11; i++){
+    var option = document.createElement("option");
+    option.text = i;
+    mySelect.add(option);
+  }
+  
+  mySelect.value = 4
   sel = 4
     
   loadLeaderboard()
@@ -167,8 +163,8 @@ function drawBoxes() {
 }
 
 function draw() {
-  if (sel != mySelect.selected()){
-    sel = mySelect.selected()
+  if (sel != mySelect.value){
+    sel = mySelect.value
     n = sel
     w = width / n; // width of each box
     loop()
