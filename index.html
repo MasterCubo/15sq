@@ -2,15 +2,16 @@
 <html lang="en">
   <meta name="viewport" content="width=device-width, initial-scale=0.9 maximum-scale=1.0, user-scalable=no">
   <head>
+    <title>15SQ</title>
     <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
     <link rel="manifest" href="/manifest.json">
     <script src="main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/addons/p5.sound.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
 
   </head>
   <body>
@@ -24,27 +25,5 @@
     <div class="inconsolata">
     <div id="LBS"></div>
     </div>
-  
-
-  <script>
-    function addRow() {
-      // Get the table body element
-      var tableBody = document.querySelector("#scoreTable tbody");
-
-      // Create a new row
-      var newRow = document.createElement("tr");
-
-      // Create and append the columns
-      for (var i = 0; i < 3; i++) {
-        var newCell = document.createElement("td");
-        var input = document.createElement("p");
-        newCell.appendChild(input);
-        newRow.appendChild(newCell);
-      }
-
-      // Append the new row to the table body
-      tableBody.appendChild(newRow);
-    }
-  </script>
   </body>
 </html>
