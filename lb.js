@@ -157,7 +157,7 @@ function checkLB(json){
   passlbTime = null
 
     if(json[sele][0].time > lbTime){
-      LBwin(nameInput.value(), Date.now(), lbTime, moves, json, sele)
+      LBwin(nameInput.value, Date.now(), lbTime, moves, json, sele)
     }
 }
 
