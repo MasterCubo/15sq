@@ -200,7 +200,7 @@ function draw() {
     fill("#1a1a1a");
     strokeWeight((10 * 4) / n);
     strokeWeight(0)
-    square(300, 400, 100); // make the restart button
+    square(350, 450, 50); // make the restart button
     fill(0)
     strokeWeight((10 * 4) / n);
     line(300,400,400,400)
@@ -208,8 +208,8 @@ function draw() {
     textAlign(CENTER, CENTER)
     strokeWeight(0)
     fill("#dedede")
-    textSize(90)
-    text("↺", 350,450)
+    textSize(45)
+    text("↺", 375,475)
     
 //     fill(150)
 //     rect(210,410,90,90)
@@ -249,7 +249,7 @@ function draw() {
     fill("#1a1a1a");
     strokeWeight((10 * 4) / n);
     strokeWeight(0)
-    square(300, 400, 100); // make the restart button
+    square(350, 450, 50); // make the restart button
     fill(0)
     strokeWeight((10 * 4) / n);
     line(300,400,400,400)
@@ -257,8 +257,8 @@ function draw() {
     textAlign(CENTER, CENTER)
     strokeWeight(0)
     fill("#dedede")
-    textSize(90)
-    text("↺", 350,450)
+    textSize(45)
+    text("↺", 375,475)
     
 //     fill(150)
 //     rect(210,410,90,90)
@@ -289,7 +289,7 @@ function mousePressed() {
     } else {
       // mouse in GUI section
       
-      if (mouseX > 300) {
+      if (mouseX > 350 && mouseY > 450) {
         loop();
         shuffleBoard();
       }
