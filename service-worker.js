@@ -9,7 +9,8 @@ self.addEventListener('install', event => {
         '/sketch.js',
         '/lb.js',
         '/img/android-chrome-192x192.png',
-        '/img/android-chrome-512x512.png'
+        '/img/android-chrome-512x512.png',
+        '/img/apple-touch-icon.png'
       ]);
     })
   );
