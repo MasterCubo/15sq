@@ -157,15 +157,12 @@ function checkLB(json){
   passlbTime = null
 
     if(json[sele][0].time > lbTime){
-      LBwin(nameInput.value(), new Date(), lbTime, moves, json, sele)
+      LBwin(nameInput.value(), Date.now(), lbTime, moves, json, sele)
     }
 }
 
 function LBwin(pname, pdate, ptime, pmoveC, json, sele) {
   json[sele].unshift({name: pname, date: pdate, time: ptime, moves: pmoveC})
   
-  let newJSON = JSON.stringify(json)
-  fs.writeFile('leaderboard.json', json, 'utf8', callback);
-  
-  
+  alert(`Winner! Screenshot this for proof. ${pname},${pdate},${ptime},${pmoveC},${sele}`)
 }
