@@ -2,6 +2,11 @@
 
 ![image](https://github.com/user-attachments/assets/f32a3592-1f4a-4d36-b8f0-02e9e7ffb828)
 
+This app has PWA support! Add it to your mobile homescreen by hitting Share, and then Add To Homescreen.
+
+If you get a high score, take a screenshot of the alert message! Since a live leaderboard would require a live backend server which I have no intention of upholding, I instead will manually add submissions as no more than 3 ppl will ever use this app. Thats all!
+
+# Story
 
 To start off, me and my sister found this unbelievably dumb Snapchat filter that would take whatever picture you took into a 3x3 tile slider puzzle, and then had you solve it. 
 
@@ -31,6 +36,8 @@ What the flip dude.
 
 So yeah now I feel strongest in JS and this is why.
 
+Anywho, fast forward 5 months or something and its summer, and I'm bored out of my mind, so I go back to finishing old projects, porting all my github pages to my actual website, and I come across my 15sq game which still looked like ass, and wasn't even a website, just a p5 sketch. So I fixed the remaining bugs and here we are. yippee!
+
 ## Plans
 
-uh I wanna add a leaderboard :D
+none lmao
