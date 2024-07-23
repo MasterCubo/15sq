@@ -7,20 +7,12 @@ let timeS;
 let timeC;
 let moves;
 let sel;
+let nameInput
 // 00:03.570 for 3x3 on phone
 // 00:18.820 for 4x4 on phone 
 // 00:03.685 for 3x3 on laptop
 // 00:21.695 for 4x4 on laptop
 
-document.cookie = "name=micah;"; // figure out cookies pls
-document.cookie = "name2=aiden;";
-console.log(document.cookie);
-console.log(
-  document.cookie
-    .split("; ")
-    .find((row) => row.startsWith("name2="))
-    ?.split("=")[1]
-);
 // TODO //
 // TODO: tidy up code and make readable. especially draw()
 // TODO: add more and better GUI
@@ -98,11 +90,19 @@ function shuffleBoard() {
   moves = 0
 }
 
+
+
 function setup() {
   createCanvas(400, 500);
+  createLB()
   w = width / n; // width of each box
   shuffleBoard(grid); // start the game essentially.
-  textFont("Courier New");
+  textFont("Inconsolata");
+  
+  
+  nameInput = createInput()
+  nameInput.attribute("placeholder", "Name for Leaderboard")
+  nameInput.position(50, 500)
   
   mySelect = createSelect();
   mySelect.position(0, 500);
@@ -119,7 +119,9 @@ function setup() {
   mySelect.option(10);
   mySelect.selected(4);
   sel = 4
-
+    
+  loadLeaderboard()
+  orderDivs()
 }
 
 function drawBoxes() {
@@ -127,7 +129,7 @@ function drawBoxes() {
     stroke(0);
     textSize((60 * 4) / n); // this type of notation is to keep the original proportions of the original board i made (4x4) across all board sizes.
     strokeWeight((10 * 4) / n);
-    textAlign(CENTER);
+    textAlign(CENTER, BASELINE);
     for (i = 0; i < n; i += 1) {
       // for each
       for (j = 0; j < n; j += 1) {
@@ -139,21 +141,27 @@ function drawBoxes() {
           square(i * w, j * w, w);
         } 
         else if (grid[j*n+i] == solved[j*n+i]) {
-          fill(150);
+          
+          fill(10);
           strokeWeight((10 * 4) / n);
           square(i * w, j * w, w);
           strokeWeight(0);
-          fill(0); // make a square with the number
+          fill("#dedede"); // make a square with the number
           text(str(grid[j * n + i]), i * w + w / 2, j * w + w / 1.5);
+          
         }else {
+          
           // else
-          fill(255);
+          fill(10);
           strokeWeight((10 * 4) / n);
-          square(i * w, j * w, w);
+          square(i * w, j * w, w,10);
+          fill(20)
+          square(i * w, j * w, w,10);
           strokeWeight(0);
-          fill(0); // make a square with the number
+          fill("#dedede"); // make a square with the number
           text(str(grid[j * n + i]), i * w + w / 2, j * w + w / 1.5);
         }
+        
       }
     }
 }
@@ -164,6 +172,7 @@ function draw() {
     n = sel
     w = width / n; // width of each box
     loop()
+    orderDivs()
     shuffleBoard()
   }
   
@@ -188,15 +197,19 @@ function draw() {
     text(moves, 0, 450)
     
     
-    fill(150, 0, 0);
+    fill("#1a1a1a");
     strokeWeight((10 * 4) / n);
     strokeWeight(0)
     square(300, 400, 100); // make the restart button
     fill(0)
     strokeWeight((10 * 4) / n);
     line(300,400,400,400)
+    
+    textAlign(CENTER, CENTER)
     strokeWeight(0)
-    text("restart", 310,455)
+    fill("#dedede")
+    textSize(90)
+    text("↺", 350,450)
     
 //     fill(150)
 //     rect(210,410,90,90)
@@ -218,6 +231,7 @@ function draw() {
      textSize(19); // render the GUI below
     textAlign(LEFT);
     timeC = Date.now();
+    let lbTime = timeC-timeS
     timeNum = (timeC - timeS) / 1000; // time in seconds
     fill(255);
     //stroke(255)
@@ -232,15 +246,19 @@ function draw() {
     text(moves, 0, 450)
     
     
-    fill(150, 0, 0);
+    fill("#1a1a1a");
     strokeWeight((10 * 4) / n);
     strokeWeight(0)
     square(300, 400, 100); // make the restart button
     fill(0)
     strokeWeight((10 * 4) / n);
     line(300,400,400,400)
+    
+    textAlign(CENTER, CENTER)
     strokeWeight(0)
-    text("restart", 310,455)
+    fill("#dedede")
+    textSize(90)
+    text("↺", 350,450)
     
 //     fill(150)
 //     rect(210,410,90,90)
@@ -252,6 +270,10 @@ function draw() {
 //     fill(0)
 //     text("4x4",150,450) // make 4x4 button
 
+    
+    //check if its a win
+    checkLeaderboard(sel, lbTime)
+    
     noLoop(); // stop running until restarted
   }
 }
@@ -270,19 +292,6 @@ function mousePressed() {
       if (mouseX > 300) {
         loop();
         shuffleBoard();
-      }
-      else if (mouseX>200 && mouseX<300)
-        {
-            n = 3 
-            w = width / n; // width of each box
-            loop()
-            shuffleBoard()
-        }
-      else if (mouseX>100 && mouseX<200) {
-            n = 4
-            w = width / n; // width of each box
-            loop()
-            shuffleBoard()
       }
     }
   }
