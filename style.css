@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+
 html, body {
   background-color: #1c1c1c;
   margin: 0;
@@ -6,3 +9,33 @@ html, body {
 canvas {
   display: block;
 }
+
+
+
+
+.inconsolata {
+    color: #dedede;
+
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+h2 {
+  color: #dedede;
+}
+table {
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+th {
+  background-color: #101010;
+  color: #dedede;
+}
+
