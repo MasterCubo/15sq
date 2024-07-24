@@ -88,6 +88,7 @@ function shuffleBoard() {
   }
   timeS = Date.now(); // the board has been shuffled, start the timer.
   moves = 0
+  loop()
 }
 
 
