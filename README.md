@@ -40,4 +40,6 @@ Anywho, fast forward 5 months or something and its summer, and I'm bored out of 
 
 ## Plans
 
-none lmao
+Add an explanation of how to add a web app
+
+an actual live server leaderbaord system that isn't a manually updated system that never actually reloads in the PWA.
