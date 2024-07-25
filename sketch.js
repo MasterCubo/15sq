@@ -270,8 +270,8 @@ function draw() {
     
     //check if its a win
     checkLeaderboard(sel, lbTime)
-    
     noLoop(); // stop running until restarted
+    
   }
 }
 
@@ -287,7 +287,6 @@ function mousePressed() {
       // mouse in GUI section
       
       if (mouseX > 350 && mouseY > 450) {
-        loop();
         shuffleBoard();
       }
     }
