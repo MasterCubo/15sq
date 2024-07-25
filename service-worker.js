@@ -1,11 +1,6 @@
 const CACHE_NAME = 'app-cache-v1';
 const FILES_TO_CACHE = [
-  '/',
-        '/index.html',
-        '/style.css',
-        '/main.js',
-        '/sketch.js',
-        '/lb.js',
+  // i was caching things, but that meant that when I updated the app (frequently) those updates wouldnt send...
         '/img/android-chrome-192x192.png',
         '/img/android-chrome-512x512.png',
         '/img/apple-touch-icon.png'
