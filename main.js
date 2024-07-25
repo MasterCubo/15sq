@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return response.json();
         })
         .then(data => {
-            displayLeaderboard(data);
+          console.log("json loaded maybe")
         })
         .catch(error => {
             console.error('There has been a problem with your fetch operation:', error);
