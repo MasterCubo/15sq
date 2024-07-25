@@ -152,7 +152,7 @@ function checkLB(json) {
     LBwin(username, Date.now(), lbTime, moves, sele);
   } else {
     if (username == "") { // no username
-      alert(`You didn't put in a username! Just in case this was a mistake, here are your stats. Screenshot this for proof. 
+      alert(`You didn't put in a username! Just in case this was a mistake, here are your stats for ${sele}x${sele}. Screenshot this for proof. 
 {"name": "${username}", "date": ${Date.now()}, "time": ${lbTime}, "moves":${moves}}`);
     } else { // theres a username!
       
@@ -170,7 +170,7 @@ function checkLB(json) {
         }
       }
       if (!onBoard) { // if they didnt have an entry on the board
-        alert(`You don't have a score on the board yet! Screenshot this for proof. 
+        alert(`You don't have a score on the board for ${sele}x${sele} yet! Screenshot this for proof. 
 {"name": "${username}", "date": ${Date.now()}, "time": ${lbTime}, "moves":${moves}}`);
       }
     }
