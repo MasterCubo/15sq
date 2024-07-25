@@ -309,7 +309,6 @@ function keyPressed() {
       makeMove(zidx % n, floor(zidx / n) - 1); // swap up
       break;
     case 82: // r
-      loop()
       shuffleBoard()
       break;
   }
